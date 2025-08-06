@@ -1,0 +1,25 @@
+{
+  "teamIntro": {
+    "title": "Meet the Kunamix Team",
+    "subtitle": "Three passionate developers and designers crafting digital experiences",
+    "description": "We're a creative tech team that combines innovation, design, and development to bring your digital visions to life."
+  },
+  "images": [
+    {
+      "src": "/src/assets/team/1.webp",
+      "alt": "image 1"
+    },
+    {
+      "src": "/src/assets/team/2.webp",
+      "alt": "image 2"
+    },
+    {
+      "src": "/src/assets/3.png",
+      "alt": "image 3"
+    },
+    {
+      "src": "/src/assets/4.png",
+      "alt": "image 4"
+    }
+  ]
+}

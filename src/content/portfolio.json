@@ -1,0 +1,69 @@
+{
+  "portfolioIntro": {
+    "title": "Our Work",
+    "subtitle": "Showcasing our latest projects and case studies",
+    "description": "Take a look at some of the projects we've worked on for clients across various industries."
+  },
+  "projects": [
+    {
+      "id": "coding-platform",
+      "title": "Coding Platform",
+      "description": "A modern problem solving platform with advanced features and seamless user experience.",
+      "category": "Web Application",
+      "technologies": ["React", "Node.js", "PostgreSQL", "Stripe"],
+      "image": "/src/assets/portfolio/1.png",
+      "link": "https://algoarena.kunamix.com",
+      "featured": true
+    },
+    {
+      "id": "blogging-page",
+      "title": "Blogging Web Application",
+      "description": "Mobile app for tracking workouts, nutrition, and health metrics.",
+      "category": "Web Application",
+      "technologies": ["React", "Firebase", "Redux"],
+      "image": "/src/assets/portfolio/2.png",
+      "link": "https://apnemy.com/",
+      "featured": true
+    },
+    {
+      "id": "design-system",
+      "title": "Corporate Design System",
+      "description": "Comprehensive design system for a Fortune 500 company.",
+      "category": "UI/UX Design",
+      "technologies": ["Figma", "Storybook", "React"],
+      "image": "/api/placeholder/600/400",
+      "link": "#",
+      "featured": false
+    },
+    {
+      "id": "productivity-tool",
+      "title": "Team Productivity Tool",
+      "description": "Desktop application for team collaboration and project management.",
+      "category": "Desktop App",
+      "technologies": ["Electron", "Vue.js", "SQLite"],
+      "image": "/api/placeholder/600/400",
+      "link": "#",
+      "featured": false
+    },
+    {
+      "id": "restaurant-website",
+      "title": "Restaurant Website",
+      "description": "Beautiful website with online ordering system for a local restaurant.",
+      "category": "Website",
+      "technologies": ["Next.js", "Tailwind CSS", "Sanity CMS"],
+      "image": "/api/placeholder/600/400",
+      "link": "#",
+      "featured": false
+    },
+    {
+      "id": "startup-branding",
+      "title": "Startup Brand Identity",
+      "description": "Complete brand identity design for a tech startup including logo and guidelines.",
+      "category": "Branding",
+      "technologies": ["Adobe Illustrator", "Figma"],
+      "image": "/api/placeholder/600/400",
+      "link": "#",
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "servicesIntro": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive digital solutions for your business",
+    "description": "From concept to deployment, we provide end-to-end development and design services."
+  },
+  "services": [
+    {
+      "id": "web-development",
+      "title": "Custom Website Development",
+      "description": "Modern, responsive websites built with the latest technologies. Fast, secure, and scalable solutions.",
+      "icon": "Code",
+      "features": ["React/Vue.js", "Responsive Design", "SEO Optimized", "Performance Focused"],
+      "price": "Starting from $2,999"
+    },
+    {
+      "id": "web-applications",
+      "title": "Web Applications",
+      "description": "Complex web applications with custom functionality. Full-stack development with modern frameworks.",
+      "icon": "Globe",
+      "features": ["Full-Stack Development", "API Integration", "Database Design", "Cloud Deployment"],
+      "price": "Starting from $4,999"
+    },
+    {
+      "id": "mobile-apps",
+      "title": "Mobile App Development",
+      "description": "Cross-platform mobile applications for iOS and Android using React Native or Flutter.",
+      "icon": "Smartphone",
+      "features": ["Cross-Platform", "Native Performance", "App Store Ready", "Push Notifications"],
+      "price": "Starting from $3,999"
+    },
+    {
+      "id": "desktop-apps",
+      "title": "Desktop Applications",
+      "description": "Native desktop applications for Windows, macOS, and Linux using Electron or Tauri.",
+      "icon": "Monitor",
+      "features": ["Cross-Platform", "Native Integration", "Auto-Updates", "System Tray Support"],
+      "price": "Starting from $3,499"
+    },
+    {
+      "id": "ui-ux-design",
+      "title": "UI/UX Design",
+      "description": "User-centered design that creates intuitive and engaging digital experiences.",
+      "icon": "Palette",
+      "features": ["User Research", "Wireframing", "Prototyping", "Design Systems"],
+      "price": "Starting from $1,999"
+    },
+    {
+      "id": "branding",
+      "title": "Logo Design & Branding",
+      "description": "Complete brand identity design including logos, color schemes, and brand guidelines.",
+      "icon": "Zap",
+      "features": ["Logo Design", "Brand Guidelines", "Color Palette", "Typography"],
+      "price": "Starting from $999"
+    }
+  ]
+}
