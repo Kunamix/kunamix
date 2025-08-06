@@ -19,7 +19,7 @@ export const useContactForm = () => {
     setResponse(null);
 
     try {
-      const res = await axiosInstance.post("/user/kunamix/send-mail", formData);
+      const res = await axiosInstance.post("/api/v1/kunamix/mail-sender", formData);
       setResponse(res.data);
       return res.data;
     } catch (err) {
