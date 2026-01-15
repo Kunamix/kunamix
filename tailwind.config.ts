@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -63,7 +64,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				carousel: {
+          DEFAULT: "hsl(var(--carousel-bg))",
+          foreground: "hsl(var(--carousel-foreground))",
+          muted: "hsl(var(--carousel-muted))",
+          highlight: "hsl(var(--carousel-highlight))",
+          "gradient-start": "hsl(var(--carousel-gradient-start))",
+          "gradient-end": "hsl(var(--carousel-gradient-end))",
+          "blob-1": "hsl(var(--carousel-blob-1))",
+          "blob-2": "hsl(var(--carousel-blob-2))",
+          "blob-3": "hsl(var(--carousel-blob-3))",
+          badge: "hsl(var(--carousel-badge-bg))",
+          "badge-foreground": "hsl(var(--carousel-badge-foreground))",
+          accent: "hsl(var(--carousel-accent))",
+          nav: "hsl(var(--carousel-nav-bg))",
+          "nav-hover": "hsl(var(--carousel-nav-hover))",
+          "nav-foreground": "hsl(var(--carousel-nav-foreground))",
+          dot: "hsl(var(--carousel-dot))",
+          "dot-hover": "hsl(var(--carousel-dot-hover))",
+          "progress-track": "hsl(var(--carousel-progress-track))",
+        },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -136,5 +157,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

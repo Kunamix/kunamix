@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Github, Linkedin, Twitter, Dribbble, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import contactData from "@/content/contact.json";
 import Logo from "/Kunamix_Logo.webp";
 import discord from '../assets/icons/discord.png'
@@ -148,39 +147,6 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="py-6 border-t border-border/50">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center text-sm text-muted-foreground"
-            >
-              <span>Made with</span>
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="mx-2"
-              >
-                <Heart className="w-4 h-4 text-red-500 fill-current" />
-              </motion.div>
-              <span>by Kunamix Team</span>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-sm text-muted-foreground"
-            >
-              © {new Date().getFullYear()} Kunamix. All rights reserved.
             </motion.div>
           </div>
         </div>

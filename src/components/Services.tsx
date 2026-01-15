@@ -127,7 +127,7 @@ const Services = () => {
                   {/* CTA Button */}
                   <Button
                     variant="outline"
-                    className="w-full border-primary/30 hover:bg-primary/5 hover:text-white hover:border-primary/50 transition-all duration-300 group"
+                    className="w-full border-primary/30 hover:bg-primary/5 group-hover:text-primary hover:border-primary/50 transition-all duration-300 group"
                     onClick={() => {
                       const element = document.querySelector('#contact');
                       if (element) {

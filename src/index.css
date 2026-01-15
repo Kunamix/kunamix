@@ -51,6 +51,31 @@
     --shadow-card: 0 4px 20px -4px hsl(210 20% 6% / 0.08);
     --shadow-accent: 0 8px 25px -8px hsl(310 83% 78% / 0.4);
 
+    /* Carousel Design System */
+    --carousel-bg: 250 100% 98%;
+    --carousel-foreground: 240 10% 15%;
+    --carousel-muted: 240 5% 50%;
+    --carousel-highlight: 262 83% 58%;
+    
+    --carousel-gradient-start: 262 83% 58%;
+    --carousel-gradient-end: 330 80% 65%;
+    
+    --carousel-blob-1: 262 80% 92%;
+    --carousel-blob-2: 330 70% 92%;
+    --carousel-blob-3: 200 70% 92%;
+    
+    --carousel-badge-bg: 262 60% 95%;
+    --carousel-badge-foreground: 262 83% 45%;
+    --carousel-accent: 262 83% 58%;
+    
+    --carousel-nav-bg: 0 0% 100%;
+    --carousel-nav-hover: 262 60% 97%;
+    --carousel-nav-foreground: 262 83% 45%;
+    
+    --carousel-dot: 240 5% 80%;
+    --carousel-dot-hover: 262 50% 70%;
+    --carousel-progress-track: 240 5% 92%;
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -109,6 +134,31 @@
     --shadow-primary: 0 10px 30px -5px hsl(239 84% 67% / 0.5);
     --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
     --shadow-accent: 0 8px 25px -8px hsl(310 83% 78% / 0.6);
+
+    /* Carousel Dark Mode */
+    --carousel-bg: 240 10% 8%;
+    --carousel-foreground: 0 0% 95%;
+    --carousel-muted: 240 5% 65%;
+    --carousel-highlight: 262 83% 70%;
+    
+    --carousel-gradient-start: 262 83% 65%;
+    --carousel-gradient-end: 330 80% 70%;
+    
+    --carousel-blob-1: 262 50% 20%;
+    --carousel-blob-2: 330 40% 20%;
+    --carousel-blob-3: 200 40% 15%;
+    
+    --carousel-badge-bg: 262 40% 18%;
+    --carousel-badge-foreground: 262 83% 75%;
+    --carousel-accent: 262 83% 65%;
+    
+    --carousel-nav-bg: 240 10% 12%;
+    --carousel-nav-hover: 262 40% 18%;
+    --carousel-nav-foreground: 262 83% 75%;
+    
+    --carousel-dot: 240 5% 30%;
+    --carousel-dot-hover: 262 50% 50%;
+    --carousel-progress-track: 240 5% 15%;
 
     --sidebar-background: 210 20% 8%;
     --sidebar-foreground: 0 0% 100%;
