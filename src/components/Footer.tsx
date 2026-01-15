@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Heart, Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import contactData from "@/content/contact.json";
 import Logo from "/Kunamix_Logo.webp";
 import discord from '../assets/icons/discord.png'
@@ -15,6 +15,8 @@ const Footer = () => {
         return <Linkedin className="w-5 h-5" />;
       case "twitter":
         return <Twitter className="w-5 h-5" />;
+      case "instagram":
+        return <Instagram className="w-5 h-5" />;
       case "discord":
         return <img src={discord} className="w-5 h-5" />;
       default:

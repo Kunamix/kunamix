@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, Dribbble } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, Dribbble, Instagram } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -64,6 +64,8 @@ const Contact = () => {
         return <Linkedin className="w-5 h-5" />;
       case 'twitter':
         return <Twitter className="w-5 h-5" />;
+      case 'instagram':
+        return <Instagram className="w-5 h-5" />;
       case "discord":
         return <img src={discord} className="w-5 h-5" />;
       default:
