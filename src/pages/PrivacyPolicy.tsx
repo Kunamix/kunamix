@@ -238,10 +238,10 @@ const PrivacyPolicy = () => {
                   <div className="inline-flex items-center gap-2 text-primary font-medium">
                     <Mail className="w-4 h-4" />
                     <a
-                      href="mailto:privacy@kunamix.com"
+                      href="mailto:contact@kunamix.com"
                       className="hover:underline"
                     >
-                      privacy@kunamix.com
+                      contact@kunamix.com
                     </a>
                   </div>
                 </div>

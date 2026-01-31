@@ -7,12 +7,14 @@ import TermsAndConditions from "./pages/TermsAndConditions"
 import NotFound from "./pages/NotFound"
 import { TooltipProvider } from "./components/ui/tooltip"
 import { Toaster } from "@/components/ui/sonner";
+import WhatsAppButton from "./components/WhatsAppButton"
 
 const App = () => {
   return (
     <ThemeProvider defaultTheme="light" storageKey="kunamix-ui-theme">
       <TooltipProvider>
         <Toaster />
+        <WhatsAppButton/>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

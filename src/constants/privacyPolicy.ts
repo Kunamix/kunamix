@@ -97,7 +97,7 @@ export const sections = [
       "Data Portability: You can request a copy of your data in a structured, machine-readable format.",
       "Opt-Out: You can opt-out of marketing communications at any time by clicking 'unsubscribe' in our emails.",
       "Withdraw Consent: You may withdraw consent for data processing where we rely on consent as the legal basis.",
-      "To exercise these rights, please contact us at privacy@kunamix.com.",
+      "To exercise these rights, please contact us at contact@kunamix.com.",
     ],
     gradient: "from-cyan-400 to-blue-500",
   },
@@ -162,7 +162,7 @@ export const sections = [
     title: "13. Contact Us",
     content: [
       "If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:",
-      "Email: privacy@kunamix.com",
+      "Email: contact@kunamix.com",
       "Data Protection Officer: dpo@kunamix.com",
       "Phone: +91 [Your Contact Number]",
       "Address: [Your Business Address]",
