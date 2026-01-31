@@ -157,17 +157,4 @@ export const sections = [
     ],
     gradient: "from-blue-400 to-indigo-500",
   },
-  {
-    icon: Mail,
-    title: "13. Contact Us",
-    content: [
-      "If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:",
-      "Email: contact@kunamix.com",
-      "Data Protection Officer: dpo@kunamix.com",
-      "Phone: +91 [Your Contact Number]",
-      "Address: [Your Business Address]",
-      "We will respond to your inquiry within 30 days.",
-    ],
-    gradient: "from-teal-400 to-cyan-500",
-  },
 ];
