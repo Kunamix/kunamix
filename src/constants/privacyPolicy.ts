@@ -6,7 +6,6 @@ import {
   FileText,
   Globe,
   Lock,
-  Mail,
   Share2,
   UserCheck,
 } from "lucide-react";
