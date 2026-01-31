@@ -1,33 +1,45 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter, Dribbble, Instagram } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
-import contactData from '@/content/contact.json';
-import discord from '../assets/icons/discord.png'
-import { useContactForm } from '@/hooks/useContactFrom';
+import { motion } from "motion/react";
+import { useState } from "react";
+import {
+  Send,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+// import { useToast } from "@/hooks/use-toast";
+import contactData from "@/constants/contact.json";
+import discord from "../assets/icons/discord.png";
+import { useContactForm } from "@/hooks/useContactFrom";
+import { toast } from "sonner";
 
 const Contact = () => {
-  const { sendContactForm, loading, response, error } = useContactForm();
-  const { contactInfo, social, formFields } = contactData;
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { sendContactForm, loading } = useContactForm();
+  const { contactInfo, social } = contactData;
+  // const { toast } = useToast();
+  const [isSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -35,36 +47,27 @@ const Contact = () => {
     e.preventDefault();
     const res = await sendContactForm(formData);
     if (res.success) {
-      toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you within 24 hours.",
-          variant: "default",
-        });
+      toast("Message sent successfully!");
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
-    }
-    else{
-     toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out! We'll get back to you soon.",
-        variant: "default",
-      });
+    } else {
+      toast("Message not sent!");
     }
   };
 
   const getSocialIcon = (platform: string) => {
     switch (platform) {
-      case 'github':
+      case "github":
         return <Github className="w-5 h-5" />;
-      case 'linkedin':
+      case "linkedin":
         return <Linkedin className="w-5 h-5" />;
-      case 'twitter':
+      case "twitter":
         return <Twitter className="w-5 h-5" />;
-      case 'instagram':
+      case "instagram":
         return <Instagram className="w-5 h-5" />;
       case "discord":
         return <img src={discord} className="w-5 h-5" />;
@@ -150,7 +153,9 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="pt-8">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Follow Us</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">
+                Follow Us
+              </h3>
               <div className="flex gap-4">
                 {Object.entries(social).map(([platform, url]) => (
                   <motion.a
@@ -261,13 +266,17 @@ const Contact = () => {
                     {loading ? (
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                        transition={{
+                          duration: 1,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                         className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
                       />
                     ) : (
                       <Send className="w-5 h-5 mr-2" />
                     )}
-                    {loading ? 'Sending...' : 'Send Message'}
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

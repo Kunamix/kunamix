@@ -1,12 +1,20 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
 
 import carouselDecor2 from "@/assets/carousel/carousel-decor-2.png";
 import carouselDecor1 from "@/assets/carousel/carousel-decor-1.png";
 import carouselDecor3 from "@/assets/carousel/carousel-decor-3.png";
 import carouselDecor4 from "@/assets/carousel/carousel-decor-4.png";
-import { ArrowRight, ChevronLeft, ChevronRight, Globe, Layers, Palette, Puzzle } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Globe,
+  Layers,
+  Palette,
+  Puzzle,
+} from "lucide-react";
 
 interface Slide {
   id: number;
@@ -96,37 +104,25 @@ const floatingTransition = {
   ease: "easeInOut" as const,
 };
 
-const HeroCorousel = () => {
+const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
-  const nextSlide = useCallback(() => {
+  const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, []);
+  };
 
-  const prevSlide = useCallback(() => {
+  const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  }, []);
+  };
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
   return (
     <section
       id="banner"
       className="w-full relative overflow-hidden bg-carousel"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Animated Background gradient Orbs - Hidden on very small screens for performance  */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -166,7 +162,11 @@ const HeroCorousel = () => {
         />
         <motion.div
           animate={{ y: [-5, 5, -5] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" as const }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut" as const,
+          }}
           className="absolute top-1/3 left-1/4 w-2 h-2 bg-carousel-gradient-end/50 rounded-full"
         />
       </div>
@@ -235,7 +235,9 @@ const HeroCorousel = () => {
                     <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-carousel-gradient-start/20 to-carousel-gradient-end/20 flex items-center justify-center">
                       <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-r from-carousel-gradient-start to-carousel-gradient-end" />
                     </span>
-                    <span className="text-sm sm:text-base md:text-lg">{feature}</span>
+                    <span className="text-sm sm:text-base md:text-lg">
+                      {feature}
+                    </span>
                   </motion.li>
                 ))}
               </motion.ul>
@@ -247,7 +249,12 @@ const HeroCorousel = () => {
                 transition={{ delay: 0.6 }}
                 className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start pt-2"
               >
-                <Button variant="carousel" size="lg" asChild className="w-full sm:w-auto">
+                <Button
+                  variant="carousel"
+                  size="lg"
+                  asChild
+                  className="w-full sm:w-auto"
+                >
                   <a href={slides[currentSlide].ctaLink} className="group">
                     {slides[currentSlide].ctaText}
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
@@ -273,11 +280,15 @@ const HeroCorousel = () => {
               >
                 {/* Glow Effect Behind Image */}
                 <div className="absolute inset-0 bg-gradient-to-r from-carousel-gradient-start to-carousel-gradient-end rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl opacity-25 scale-90" />
-                
+
                 {/* Floating Image */}
                 <motion.div
                   animate={{ y: [-6, 6, -6] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                   className="relative"
                 >
                   <img
@@ -285,11 +296,15 @@ const HeroCorousel = () => {
                     alt={slides[currentSlide].badge}
                     className="relative z-10 w-full h-auto rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl shadow-primary/20"
                   />
-                  
+
                   {/* Decorative Ring - Hidden on small screens */}
                   <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="hidden sm:block absolute -inset-3 sm:-inset-4 border-2 border-dashed border-carousel-accent/20 rounded-[1.5rem] sm:rounded-[2rem] pointer-events-none"
                   />
                 </motion.div>
@@ -303,11 +318,17 @@ const HeroCorousel = () => {
                 >
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-carousel-gradient-start to-carousel-gradient-end flex items-center justify-center">
-                      <span className="text-white text-xs sm:text-sm font-bold">50+</span>
+                      <span className="text-white text-xs sm:text-sm font-bold">
+                        50+
+                      </span>
                     </div>
                     <div>
-                      <p className="text-xs sm:text-sm font-semibold  text-black">Projects</p>
-                      <p className="text-[10px] sm:text-xs text-carousel-muted">Completed</p>
+                      <p className="text-xs sm:text-sm font-semibold  text-black">
+                        Projects
+                      </p>
+                      <p className="text-[10px] sm:text-xs text-carousel-muted">
+                        Completed
+                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -334,10 +355,14 @@ const HeroCorousel = () => {
                         </motion.svg>
                       ))}
                     </div>
-                    
-                    <span className="text-xs sm:text-sm font-semibold text-black">5.0</span>
+
+                    <span className="text-xs sm:text-sm font-semibold text-black">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-[10px] sm:text-xs text-carousel-muted mt-0.5 sm:mt-1">Client Rating</p>
+                  <p className="text-[10px] sm:text-xs text-carousel-muted mt-0.5 sm:mt-1">
+                    Client Rating
+                  </p>
                 </motion.div>
               </motion.div>
             </AnimatePresence>
@@ -386,4 +411,4 @@ const HeroCorousel = () => {
   );
 };
 
-export default HeroCorousel;
+export default HeroCarousel;

@@ -1,179 +1,245 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 /* Kunamix Design System - Modern tech portfolio with vibrant gradients */
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 210 20% 6%;
+:root {
+  /* Border Radius */
+  --radius: 0.75rem;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 20% 6%;
+  /* Light Mode Colors */
+  --background: 0 0% 100%;
+  --foreground: 220 15% 10%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 220 15% 10%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 15% 10%;
+  
+  /* Vibrant electric blue & purple gradient primary */
+  --primary: 250 100% 65%;
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 250 100% 85%;
+  --primary-dark: 250 100% 50%;
+  
+  --secondary: 220 20% 96%;
+  --secondary-foreground: 220 15% 10%;
+  
+  --muted: 220 20% 97%;
+  --muted-foreground: 220 15% 35%;
+  
+  /* Vibrant cyan accent for tech feel */
+  --accent: 185 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 220 20% 88%;
+  --input: 220 20% 88%;
+  --ring: 250 100% 65%;
+  
+  /* Sidebar Colors */
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 220 15% 18%;
+  --sidebar-primary: 250 100% 65%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 20% 95%;
+  --sidebar-accent-foreground: 220 15% 10%;
+  --sidebar-border: 220 15% 88%;
+  --sidebar-ring: 250 100% 65%;
+  
+  /* Carousel Colors - Energetic purple & pink */
+  --carousel-bg: 260 100% 99%;
+  --carousel-foreground: 260 15% 12%;
+  --carousel-muted: 260 10% 38%;
+  --carousel-highlight: 280 100% 65%;
+  
+  --carousel-gradient-start: 280 100% 65%;
+  --carousel-gradient-end: 320 100% 70%;
+  
+  --carousel-blob-1: 280 90% 90%;
+  --carousel-blob-2: 320 85% 88%;
+  --carousel-blob-3: 185 85% 88%;
+  
+  --carousel-badge-bg: 280 85% 96%;
+  --carousel-badge-foreground: 280 100% 35%;
+  --carousel-accent: 280 100% 65%;
+  
+  --carousel-nav-bg: 0 0% 100%;
+  --carousel-nav-hover: 280 80% 96%;
+  --carousel-nav-foreground: 280 100% 35%;
+  
+  --carousel-dot: 260 10% 75%;
+  --carousel-dot-hover: 280 80% 60%;
+  --carousel-progress-track: 260 10% 90%;
+}
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 6%;
+.dark {
+  /* Dark Mode Colors */
+  --background: 220 20% 8%;
+  --foreground: 220 20% 98%;
+  
+  --card: 220 20% 10%;
+  --card-foreground: 220 20% 98%;
+  
+  --popover: 220 20% 10%;
+  --popover-foreground: 220 20% 98%;
+  
+  /* Brighter primary for dark mode visibility */
+  --primary: 250 100% 70%;
+  --primary-foreground: 220 20% 8%;
+  --primary-light: 250 100% 85%;
+  --primary-dark: 250 100% 55%;
+  
+  --secondary: 220 20% 15%;
+  --secondary-foreground: 220 20% 98%;
+  
+  --muted: 220 20% 12%;
+  --muted-foreground: 220 15% 75%;
+  
+  /* Vibrant cyan for dark mode */
+  --accent: 185 100% 60%;
+  --accent-foreground: 220 20% 8%;
+  
+  --destructive: 0 75% 58%;
+  --destructive-foreground: 220 20% 98%;
+  
+  --border: 220 20% 18%;
+  --input: 220 20% 18%;
+  --ring: 250 100% 70%;
+  
+  /* Sidebar Dark Colors */
+  --sidebar-background: 220 20% 10%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 250 100% 70%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 20% 15%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 220 20% 20%;
+  --sidebar-ring: 250 100% 70%;
+  
+  /* Carousel Dark Mode - Neon vibes */
+  --carousel-bg: 260 20% 10%;
+  --carousel-foreground: 0 0% 98%;
+  --carousel-muted: 260 10% 72%;
+  --carousel-highlight: 280 100% 75%;
+  
+  --carousel-gradient-start: 280 100% 70%;
+  --carousel-gradient-end: 320 100% 75%;
+  
+  --carousel-blob-1: 280 60% 20%;
+  --carousel-blob-2: 320 55% 20%;
+  --carousel-blob-3: 185 50% 18%;
+  
+  --carousel-badge-bg: 280 50% 18%;
+  --carousel-badge-foreground: 280 100% 82%;
+  --carousel-accent: 280 100% 70%;
+  
+  --carousel-nav-bg: 260 20% 15%;
+  --carousel-nav-hover: 280 50% 20%;
+  --carousel-nav-foreground: 280 100% 82%;
+  
+  --carousel-dot: 260 10% 35%;
+  --carousel-dot-hover: 280 70% 55%;
+  --carousel-progress-track: 260 10% 18%;
+}
 
-    /* Modern gradient primary colors */
-    --primary: 239 84% 67%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 244 91% 83%;
-    --primary-dark: 239 84% 55%;
+@theme {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-light: hsl(var(--primary-light));
+  --color-primary-dark: hsl(var(--primary-dark));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  /* Additional gradient colors for purple and pink */
+  --color-purple-400: hsl(280 100% 70%);
+  --color-purple-500: hsl(280 100% 65%);
+  --color-pink-400: hsl(320 100% 75%);
+  --color-pink-500: hsl(320 100% 70%);
+  
+  /* Additional gradient colors for privacy policy sections */
+  --color-blue-400: hsl(210 100% 65%);
+  --color-blue-500: hsl(210 100% 60%);
+  --color-cyan-400: hsl(185 90% 60%);
+  --color-cyan-500: hsl(185 90% 55%);
+  --color-teal-400: hsl(175 80% 55%);
+  --color-teal-500: hsl(175 80% 50%);
+  --color-emerald-400: hsl(160 85% 55%);
+  --color-emerald-500: hsl(160 85% 50%);
+  --color-green-400: hsl(140 75% 55%);
+  --color-orange-400: hsl(30 100% 60%);
+  --color-orange-500: hsl(30 100% 55%);
+  --color-red-400: hsl(0 85% 65%);
+  --color-red-500: hsl(0 85% 60%);
+  --color-indigo-400: hsl(240 75% 65%);
+  --color-indigo-500: hsl(240 75% 60%);
+  --color-violet-400: hsl(260 85% 65%);
+  --color-rose-500: hsl(350 90% 60%);
+  --color-yellow-400: hsl(45 100% 60%);
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --color-sidebar-background: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  
+  --color-carousel: hsl(var(--carousel-bg));
+  --color-carousel-foreground: hsl(var(--carousel-foreground));
+  --color-carousel-muted: hsl(var(--carousel-muted));
+  --color-carousel-highlight: hsl(var(--carousel-highlight));
+  --color-carousel-gradient-start: hsl(var(--carousel-gradient-start));
+  --color-carousel-gradient-end: hsl(var(--carousel-gradient-end));
+  --color-carousel-blob-1: hsl(var(--carousel-blob-1));
+  --color-carousel-blob-2: hsl(var(--carousel-blob-2));
+  --color-carousel-blob-3: hsl(var(--carousel-blob-3));
+  --color-carousel-badge: hsl(var(--carousel-badge-bg));
+  --color-carousel-badge-foreground: hsl(var(--carousel-badge-foreground));
+  --color-carousel-accent: hsl(var(--carousel-accent));
+  --color-carousel-nav: hsl(var(--carousel-nav-bg));
+  --color-carousel-nav-hover: hsl(var(--carousel-nav-hover));
+  --color-carousel-nav-foreground: hsl(var(--carousel-nav-foreground));
+  --color-carousel-dot: hsl(var(--carousel-dot));
+  --color-carousel-dot-hover: hsl(var(--carousel-dot-hover));
+  --color-carousel-progress-track: hsl(var(--carousel-progress-track));
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 210 20% 6%;
-
-    --muted: 210 40% 98%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    /* Accent colors for highlights */
-    --accent: 310 83% 78%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 239 84% 67%;
-
-    --radius: 0.75rem;
-
-    /* Custom gradients for modern design */
-    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(310 83% 78%));
-    --gradient-secondary: linear-gradient(135deg, hsl(244 91% 83%), hsl(239 84% 67%));
-    --gradient-accent: linear-gradient(135deg, hsl(310 83% 78%), hsl(327 73% 83%));
-    --gradient-bg: linear-gradient(135deg, hsl(210 40% 98%), hsl(220 60% 99%));
-
-    /* Shadows */
-    --shadow-primary: 0 10px 30px -5px hsl(239 84% 67% / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(210 20% 6% / 0.08);
-    --shadow-accent: 0 8px 25px -8px hsl(310 83% 78% / 0.4);
-
-    /* Carousel Design System */
-    --carousel-bg: 250 100% 98%;
-    --carousel-foreground: 240 10% 15%;
-    --carousel-muted: 240 5% 50%;
-    --carousel-highlight: 262 83% 58%;
-    
-    --carousel-gradient-start: 262 83% 58%;
-    --carousel-gradient-end: 330 80% 65%;
-    
-    --carousel-blob-1: 262 80% 92%;
-    --carousel-blob-2: 330 70% 92%;
-    --carousel-blob-3: 200 70% 92%;
-    
-    --carousel-badge-bg: 262 60% 95%;
-    --carousel-badge-foreground: 262 83% 45%;
-    --carousel-accent: 262 83% 58%;
-    
-    --carousel-nav-bg: 0 0% 100%;
-    --carousel-nav-hover: 262 60% 97%;
-    --carousel-nav-foreground: 262 83% 45%;
-    
-    --carousel-dot: 240 5% 80%;
-    --carousel-dot-hover: 262 50% 70%;
-    --carousel-progress-track: 240 5% 92%;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 210 20% 4%;
-    --foreground: 210 40% 98%;
-
-    --card: 210 20% 6%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 210 20% 6%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 239 84% 67%;
-    --primary-foreground: 210 20% 4%;
-    --primary-light: 244 91% 83%;
-    --primary-dark: 239 84% 55%;
-
-    --secondary: 210 20% 10%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 210 20% 8%;
-    --muted-foreground: 210 20% 70%;
-
-    --accent: 310 83% 78%;
-    --accent-foreground: 210 20% 4%;
-
-    --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 210 20% 12%;
-    --input: 210 20% 12%;
-    --ring: 239 84% 67%;
-
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(310 83% 78%));
-    --gradient-secondary: linear-gradient(135deg, hsl(244 91% 83%), hsl(239 84% 67%));
-    --gradient-accent: linear-gradient(135deg, hsl(310 83% 78%), hsl(327 73% 83%));
-    --gradient-bg: linear-gradient(135deg, hsl(210 20% 4%), hsl(210 20% 6%));
-
-    /* Dark mode shadows */
-    --shadow-primary: 0 10px 30px -5px hsl(239 84% 67% / 0.5);
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-accent: 0 8px 25px -8px hsl(310 83% 78% / 0.6);
-
-    /* Carousel Dark Mode */
-    --carousel-bg: 240 10% 8%;
-    --carousel-foreground: 0 0% 95%;
-    --carousel-muted: 240 5% 65%;
-    --carousel-highlight: 262 83% 70%;
-    
-    --carousel-gradient-start: 262 83% 65%;
-    --carousel-gradient-end: 330 80% 70%;
-    
-    --carousel-blob-1: 262 50% 20%;
-    --carousel-blob-2: 330 40% 20%;
-    --carousel-blob-3: 200 40% 15%;
-    
-    --carousel-badge-bg: 262 40% 18%;
-    --carousel-badge-foreground: 262 83% 75%;
-    --carousel-accent: 262 83% 65%;
-    
-    --carousel-nav-bg: 240 10% 12%;
-    --carousel-nav-hover: 262 40% 18%;
-    --carousel-nav-foreground: 262 83% 75%;
-    
-    --carousel-dot: 240 5% 30%;
-    --carousel-dot-hover: 262 50% 50%;
-    --carousel-progress-track: 240 5% 15%;
-
-    --sidebar-background: 210 20% 8%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 239 84% 67%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 12%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 20% 15%;
-    --sidebar-ring: 239 84% 67%;
-  }
+  --breakpoint-md2: 1100px;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   body {
@@ -188,19 +254,35 @@
 @layer components {
   /* Custom gradient utilities */
   .bg-gradient-primary {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, oklch(0.713 0.271 292.56), oklch(0.761 0.271 306.28));
+  }
+  
+  .dark .bg-gradient-primary {
+    background: linear-gradient(135deg, oklch(0.755 0.271 292.56), oklch(0.797 0.271 306.28));
   }
   
   .bg-gradient-secondary {
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, oklch(0.707 0.171 210.99), oklch(0.713 0.271 292.56));
+  }
+  
+  .dark .bg-gradient-secondary {
+    background: linear-gradient(135deg, oklch(0.755 0.171 210.99), oklch(0.755 0.271 292.56));
   }
   
   .bg-gradient-accent {
-    background: var(--gradient-accent);
+    background: linear-gradient(135deg, oklch(0.761 0.271 306.28), oklch(0.797 0.271 338.67));
+  }
+  
+  .dark .bg-gradient-accent {
+    background: linear-gradient(135deg, oklch(0.797 0.271 306.28), oklch(0.839 0.271 338.67));
   }
   
   .bg-gradient-bg {
-    background: var(--gradient-bg);
+    background: linear-gradient(135deg, oklch(0.989 0.012 268.93), oklch(0.996 0.015 267.57));
+  }
+  
+  .dark .bg-gradient-bg {
+    background: linear-gradient(135deg, oklch(0.211 0.018 268.93), oklch(0.247 0.018 268.93));
   }
 
   /* Glass morphism effect */
@@ -217,7 +299,27 @@
 
   /* Custom shadows */
   .shadow-primary {
-    box-shadow: var(--shadow-primary);
+    box-shadow: 0 10px 40px -5px oklch(0.713 0.271 292.56 / 0.4);
+  }
+
+  .dark .shadow-primary {
+    box-shadow: 0 10px 40px -5px oklch(0.755 0.271 292.56 / 0.6);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 20px -4px oklch(0.247 0.036 268.93 / 0.1);
+  }
+
+  .dark .shadow-card {
+    box-shadow: 0 4px 25px -4px oklch(0 0 0 / 0.4);
+  }
+
+  .shadow-accent {
+    box-shadow: 0 8px 30px -8px oklch(0.707 0.171 210.99 / 0.5);
+  }
+
+  .dark .shadow-accent {
+    box-shadow: 0 8px 35px -8px oklch(0.755 0.171 210.99 / 0.7);
   }
 
   /* Hide scrollbar */
@@ -242,14 +344,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-  
-  .shadow-accent {
-    box-shadow: var(--shadow-accent);
-  }
 
   /* Animation utilities */
   .animate-float {
@@ -258,5 +352,14 @@
 
   .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }

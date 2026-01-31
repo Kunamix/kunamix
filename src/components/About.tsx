@@ -1,39 +1,74 @@
-import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Dribbble, Code2 } from "lucide-react";
+"use client";
+
+import { motion } from "motion/react";
+import { Code2, Palette, Zap, Users, Award, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import teamData from "@/content/team.json";
-import { CardCarousel } from "@/components/ui/card-carousel";
-import { one,two,three,four } from "@/assets";
-import { json } from "stream/consumers";
-const About = () => {
-  const { teamIntro,images } = teamData;
-  // images = JSON.parse(images);
-  // const imgs = JSON.stringify(images);
-  console.log(images)
-  // console.log(imgs);
 
-  const getSocialIcon = (platform: string) => {
-    switch (platform) {
-      case "github":
-        return <Github className="w-5 h-5" />;
-      case "linkedin":
-        return <Linkedin className="w-5 h-5" />;
-      case "twitter":
-        return <Twitter className="w-5 h-5" />;
-      case "dribbble":
-        return <Dribbble className="w-5 h-5" />;
-      default:
-        return <Code2 className="w-5 h-5" />;
-    }
-  };
+const About = () => {
+  const teamStats = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "3-Person Team",
+      description: "Dedicated developers and designers working in sync",
+      color: "from-blue-500 to-purple-600",
+    },
+    {
+      icon: <Code2 className="w-8 h-8" />,
+      title: "Full-Stack Expertise",
+      description: "From frontend to backend, we've got you covered",
+      color: "from-purple-500 to-pink-600",
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Design-First Approach",
+      description: "Beautiful interfaces that users love to interact with",
+      color: "from-cyan-500 to-blue-600",
+    },
+  ];
+
+  const coreValues = [
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Client-Focused",
+      description:
+        "Your success is our priority. We listen, understand, and deliver solutions tailored to your goals.",
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Fast & Efficient",
+      description:
+        "We value your time. Quick turnarounds without compromising on quality.",
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "Quality Driven",
+      description:
+        "Every pixel, every line of code is crafted with attention to detail and best practices.",
+    },
+  ];
+
+  const expertise = [
+    "React & Next.js",
+    "TypeScript",
+    "Node.js",
+    "Tailwind CSS",
+    "UI/UX Design",
+    "Responsive Design",
+    "API Development",
+    "Database Design",
+    "Performance Optimization",
+    "SEO Best Practices",
+    "Git & Version Control",
+    "Agile Methodology",
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
         delayChildren: 0.1,
       },
     },
@@ -51,73 +86,250 @@ const About = () => {
     },
   };
 
-  const image = [
-    { src: one, alt: "Image 1" },
-    { src: two, alt: "Image 2" },
-    { src: three, alt: "Image 3" },
-    { src: four, alt: "Image 4" },
-  ]
-console.log(image)
   return (
-    <section id="about" className="py-20 lg:py-32 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="py-24 lg:py-40 bg-gradient-to-b from-muted/20 via-background to-muted/20 relative overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-40 left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-24"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-8"
+          >
+            <div className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm">
+              <p className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">
+                🚀 About Us
+              </p>
+            </div>
+          </motion.div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              {teamIntro.title}
+              Meet Kunamix
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-4">
-            {teamIntro.subtitle}
+          <p className="text-xl md:text-2xl text-foreground/85 mb-6 font-medium">
+            A passionate team of developers and designers crafting exceptional
+            digital experiences
           </p>
-          <p className="text-lg text-muted-foreground">
-            {teamIntro.description}
+          <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto">
+            We're a small but mighty team that believes great digital products
+            come from the perfect blend of creativity, technical expertise, and
+            genuine care for our clients' success.
           </p>
         </motion.div>
 
-        {/* Team Members */}
-        <div className="">
-          <CardCarousel
-            images={images}
-            autoplayDelay={2000}
-            showPagination={true}
-            showNavigation={true}
-          />
-        </div>
+        {/* Team Stats Cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8 mb-28"
+        >
+          {teamStats.map((stat, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="group h-full"
+            >
+              <Card className="h-full bg-card/70 backdrop-blur-xl border border-primary/10 hover:border-primary/30 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/15 relative hover:bg-card/90">
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                <CardContent className="p-8 relative">
+                  {/* Gradient Background */}
+                  <div
+                    className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${stat.color} opacity-5 rounded-full blur-3xl group-hover:opacity-15 transition-opacity duration-500`}
+                  />
+
+                  {/* Icon */}
+                  <motion.div
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mb-6 shadow-lg relative z-10`}
+                  >
+                    {stat.icon}
+                  </motion.div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {stat.title}
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed text-base">
+                    {stat.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Core Values */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-28"
+        >
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                What Drives Us
+              </span>
+            </h3>
+            <p className="text-foreground/60 mt-4 text-lg max-w-2xl mx-auto">
+              Our core values shape everything we do and how we work with our
+              clients
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {coreValues.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group h-full"
+              >
+                <Card className="h-full bg-card/70 backdrop-blur-xl border border-primary/10 hover:border-primary/30 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/15 relative hover:bg-card/90">
+                  {/* Left accent */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                  <CardContent className="p-8">
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: -5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center text-white mb-6 shadow-lg"
+                    >
+                      {value.icon}
+                    </motion.div>
+                    <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                      {value.title}
+                    </h4>
+                    <p className="text-foreground/70 leading-relaxed text-base">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Expertise Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-28"
+        >
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Our Expertise
+              </span>
+            </h3>
+            <p className="text-foreground/60 mt-4 text-lg">
+              A comprehensive skill set to deliver excellence
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-3 backdrop-blur-sm p-8 rounded-2xl border border-primary/10 bg-card/30">
+              {expertise.map((skill, index) => (
+                <motion.span
+                  key={skill}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  whileHover={{ scale: 1.15, y: -3 }}
+                  className="px-5 py-2.5 bg-gradient-to-br from-primary/20 to-primary/10 text-foreground text-sm font-semibold rounded-full shadow-md hover:shadow-lg hover:from-primary/30 hover:to-primary/20 transition-all duration-300 cursor-default border border-primary/30 hover:border-primary/50 backdrop-blur-sm"
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mt-8 pt-16 border-t border-primary/10"
         >
-          <div className="bg-gradient-primary p-8 rounded-2xl text-white max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to work with us?</h3>
-            <p className="text-white/90 mb-6">
-              Let's discuss your project and see how we can bring your vision to
-              life.
-            </p>
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() => {
-                const element = document.querySelector("#contact");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="bg-white text-primary hover:bg-white/90 transition-colors"
-            >
-              Start a Conversation
-            </Button>
+          <div className="bg-gradient-primary p-12 md:p-16 rounded-3xl text-white max-w-4xl mx-auto shadow-2xl shadow-primary/30 relative overflow-hidden group">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500" />
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500" />
+
+            <div className="relative z-10">
+              <motion.h3
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-4xl font-bold mb-6"
+              >
+                Ready to work with us?
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-white/95 mb-10 text-lg max-w-3xl mx-auto leading-relaxed"
+              >
+                Let's discuss your project and see how we can bring your vision
+                to life. We're excited to hear about your ideas and collaborate
+                on something amazing!
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  onClick={() => {
+                    const element = document.querySelector("#contact");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="bg-white text-primary hover:bg-white/90 transition-all duration-300 font-bold shadow-2xl hover:shadow-xl hover:scale-110 px-10 h-14 text-base"
+                >
+                  Start a Conversation
+                </Button>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -126,99 +338,3 @@ console.log(image)
 };
 
 export default About;
-
-// <div className="relative">
-//           <div className="overflow-x-auto scrollbar-hide pb-4">
-//             <motion.div
-//               variants={containerVariants}
-//               initial="hidden"
-//               whileInView="visible"
-//               viewport={{ once: true }}
-//               className="flex gap-6 min-w-max px-4"
-//             >
-//             {members.map((member, index) => (
-//             <motion.div
-//               key={member.id}
-//               variants={cardVariants}
-//               whileHover={{
-//                 y: -10,
-//                 transition: { duration: 0.3 }
-//               }}
-//               className="flex-shrink-0 w-80"
-//             >
-//               <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-card transition-all duration-300 group">
-//                 <CardContent className="p-6">
-//                   {/* Avatar */}
-//                   <div className="relative mb-6">
-//                     <div className="w-24 h-24 mx-auto mb-4 relative">
-//                       <div className="w-full h-full rounded-full bg-gradient-primary p-0.5">
-//                         <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-2xl font-bold text-primary">
-//                           {member.name.split(' ').map(n => n[0]).join('')}
-//                         </div>
-//                       </div>
-//                       {/* Floating icon */}
-//                       <motion.div
-//                         animate={{ rotate: 360 }}
-//                         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-//                         className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-accent rounded-full flex items-center justify-center text-white shadow-accent"
-//                       >
-//                         <Code2 className="w-4 h-4" />
-//                       </motion.div>
-//                     </div>
-//                   </div>
-
-//                   {/* Name & Role */}
-//                   <div className="text-center mb-4">
-//                     <h3 className="text-xl font-bold text-foreground mb-1">
-//                       {member.name}
-//                     </h3>
-//                     <p className="text-primary font-medium">
-//                       {member.role}
-//                     </p>
-//                   </div>
-
-//                   {/* Description */}
-//                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-//                     {member.description}
-//                   </p>
-
-//                   {/* Skills */}
-//                   <div className="mb-6">
-//                     <div className="flex flex-wrap gap-2">
-//                       {member.skills.slice(0, 4).map((skill) => (
-//                         <span
-//                           key={skill}
-//                           className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md border border-primary/20"
-//                         >
-//                           {skill}
-//                         </span>
-//                       ))}
-//                       {member.skills.length > 4 && (
-//                         <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
-//                           +{member.skills.length - 4} more
-//                         </span>
-//                       )}
-//                     </div>
-//                   </div>
-
-//                   {/* Social Links */}
-//                   <div className="flex justify-center gap-3">
-//                     {Object.entries(member.social).map(([platform, url]) => (
-//                       <Button
-//                         key={platform}
-//                         variant="ghost"
-//                         size="sm"
-//                         className="h-9 w-9 p-0 hover:bg-primary/10 hover:text-primary transition-colors"
-//                         onClick={() => window.open(url, '_blank')}
-//                       >
-//                         {getSocialIcon(platform)}
-//                       </Button>
-//                     ))}
-//                   </div>
-//                 </CardContent>
-//               </Card>
-//             </motion.div>
-//            ))}
-//             </motion.div>
-//           </div>
-//         </div>

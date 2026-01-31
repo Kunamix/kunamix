@@ -1,8 +1,16 @@
-import { motion } from 'framer-motion';
-import { Code, Globe, Smartphone, Monitor, Palette, Zap, ArrowRight } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import servicesData from '@/content/services.json';
+import { motion } from "motion/react";
+import {
+  Code,
+  Globe,
+  Smartphone,
+  Monitor,
+  Palette,
+  Zap,
+  ArrowRight,
+} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import servicesData from "@/constants/services.json";
 
 const Services = () => {
   const { servicesIntro, services } = servicesData;
@@ -20,15 +28,46 @@ const Services = () => {
     return <IconComponent className="w-8 h-8" />;
   };
 
+  // Get service-specific CTA text based on service title or type
+  const getServiceCTA = (serviceTitle: string) => {
+    const title = serviceTitle.toLowerCase();
+
+    if (title.includes("web") && title.includes("development")) {
+      return "View Web Samples";
+    } else if (
+      title.includes("ui") ||
+      title.includes("ux") ||
+      (title.includes("design") && !title.includes("brand"))
+    ) {
+      return "See Design Portfolio";
+    } else if (title.includes("mobile")) {
+      return "View Mobile Projects";
+    } else if (title.includes("desktop") || title.includes("app")) {
+      return "Explore Desktop Work";
+    } else if (title.includes("brand") || title.includes("logo")) {
+      return "See Logo Portfolio";
+    } else if (title.includes("e-commerce") || title.includes("ecommerce")) {
+      return "View Store Examples";
+    } else if (title.includes("consulting") || title.includes("support")) {
+      return "Learn More";
+    } else if (title.includes("maintenance")) {
+      return "See Our Services";
+    } else if (title.includes("seo") || title.includes("marketing")) {
+      return "Boost Your Business";
+    } else {
+      return "Get Started";
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const cardVariants = {
@@ -38,9 +77,9 @@ const Services = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.4, 0, 0.2, 1] as const
-      }
-    }
+        ease: [0.4, 0, 0.2, 1] as const,
+      },
+    },
   };
 
   return (
@@ -59,10 +98,10 @@ const Services = () => {
               {servicesIntro.title}
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-4">
+          <p className="text-xl text-foreground/80 mb-4">
             {servicesIntro.subtitle}
           </p>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-foreground/70">
             {servicesIntro.description}
           </p>
         </motion.div>
@@ -75,13 +114,13 @@ const Services = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.id}
               variants={cardVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               className="group"
             >
@@ -91,11 +130,11 @@ const Services = () => {
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
-                    className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center text-white mx-auto mb-4 shadow-primary"
+                    className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center text-primary-foreground mx-auto mb-4 shadow-primary"
                   >
                     {getServiceIcon(service.icon)}
                   </motion.div>
-                  
+
                   {/* Title */}
                   <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {service.title}
@@ -104,7 +143,7 @@ const Services = () => {
 
                 <CardContent className="pt-0">
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                  <p className="text-foreground/70 text-sm mb-6 leading-relaxed">
                     {service.description}
                   </p>
 
@@ -114,7 +153,7 @@ const Services = () => {
                       {service.features.map((feature) => (
                         <div
                           key={feature}
-                          className="flex items-center text-xs text-muted-foreground"
+                          className="flex items-center text-xs text-foreground/70"
                         >
                           <div className="w-1 h-1 bg-primary rounded-full mr-2"></div>
                           {feature}
@@ -123,20 +162,30 @@ const Services = () => {
                     </div>
                   </div>
 
-
-                  {/* CTA Button */}
+                  {/* Service-Specific CTA Button */}
                   <Button
                     variant="outline"
-                    className="w-full border-primary/30 hover:bg-primary/5 group-hover:text-primary hover:border-primary/50 transition-all duration-300 group"
+                    className="
+                      w-full 
+                      border-primary/30 
+                      bg-transparent
+                      text-foreground
+                      hover:bg-primary/10
+                      hover:border-primary/50
+                      hover:text-primary
+                      transition-all 
+                      duration-300 
+                      group/btn
+                    "
                     onClick={() => {
-                      const element = document.querySelector('#contact');
+                      const element = document.querySelector("#contact");
                       if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+                        element.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
                   >
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    {getServiceCTA(service.title)}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>
@@ -153,21 +202,28 @@ const Services = () => {
           className="text-center mt-16"
         >
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
-              Need something custom?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              We love unique challenges and are always ready to discuss custom solutions tailored to your specific needs.
+            <h3 className="text-2xl font-bold mb-4">Need something custom?</h3>
+            <p className="text-foreground/70 mb-6">
+              We love unique challenges and are always ready to discuss custom
+              solutions tailored to your specific needs.
             </p>
             <Button
               size="lg"
               onClick={() => {
-                const element = document.querySelector('#contact');
+                const element = document.querySelector("#contact");
                 if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                  element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="bg-gradient-primary hover:shadow-primary transition-all duration-300"
+              className="
+                bg-gradient-primary 
+                text-primary-foreground
+                hover:opacity-90
+                hover:shadow-primary 
+                hover:scale-105
+                transition-all 
+                duration-300
+              "
             >
               Discuss Your Project
             </Button>

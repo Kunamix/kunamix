@@ -1,11 +1,19 @@
-import { motion } from "framer-motion";
-import { Heart, Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
-import contactData from "@/content/contact.json";
-import Logo from "/Kunamix_Logo.webp";
-import discord from '../assets/icons/discord.png'
+import { motion } from "motion/react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  Instagram,
+} from "lucide-react";
+import contactData from "@/constants/contact.json";
+import Logo from "/logo.png";
+import discord from "../assets/icons/discord.png";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const { contactInfo, social } = contactData;
+  const navigate = useNavigate();
 
   const getSocialIcon = (platform: string) => {
     switch (platform) {
@@ -25,6 +33,10 @@ const Footer = () => {
   };
 
   const scrollToSection = (href: string) => {
+    if (href === "/terms-conditions" || href === "/privacy-policy") {
+      navigate(href);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -37,6 +49,8 @@ const Footer = () => {
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Contact", href: "#contact" },
+    { name: "PrivacyAndPolicy", href: "/privacy-policy" },
+    { name: "TermsAndConditions", href: "/terms-conditions" },
   ];
 
   const services = [
