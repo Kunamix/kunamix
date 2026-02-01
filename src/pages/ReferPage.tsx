@@ -92,7 +92,7 @@ const ReferralProgram = () => {
           animate={{ scale: 1 }}
           transition={{ delay: 0.2 }}
           onClick={onClose}
-          className="fixed top-6 right-6 z-50 p-2 rounded-full bg-card hover:bg-muted border border-border shadow-lg transition-all duration-300 hover:scale-110 group"
+          className="fixed top-6 right-6 z-50 p-2 rounded-full bg-card hover:bg-muted border border-border shadow-lg transition-all duration-300 hover:scale-110 group cursor-pointer"
         >
           <X className="w-6 h-6 text-foreground group-hover:rotate-90 transition-transform duration-300" />
         </motion.button>
@@ -456,6 +456,7 @@ const ReferralProgram = () => {
                           px-8 
                           py-6 
                           text-lg
+                          cursor-pointer
                         "
                       >
                         <Gift className="w-5 h-5 mr-2" />

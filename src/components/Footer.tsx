@@ -49,8 +49,8 @@ const Footer = () => {
     { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Contact", href: "#contact" },
-    { name: "PrivacyAndPolicy", href: "/privacy-policy" },
-    { name: "TermsAndConditions", href: "/terms-conditions" },
+    { name: "Privacy & Policy", href: "/privacy-policy" },
+    { name: "Terms & Conditions", href: "/terms-conditions" },
   ];
 
   const services = [
@@ -135,7 +135,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm cursor-pointer"
                     >
                       {link.name}
                     </button>

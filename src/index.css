@@ -5,34 +5,32 @@
 
 /* Kunamix Design System - Modern tech portfolio with vibrant gradients */
 
-
-
 :root {
   /* Border Radius */
   --radius: 0.75rem;
 
-  /* Light Mode Colors */
-  --background: 0 0% 100%;
+  /* Light Mode Colors - Softer, less bright version */
+  --background: 220 15% 96%;  /* Changed from 100% to 96% - softer white */
   --foreground: 220 15% 10%;
   
-  --card: 0 0% 100%;
+  --card: 0 0% 98%;  /* Changed from 100% to 98% - slight off-white */
   --card-foreground: 220 15% 10%;
   
-  --popover: 0 0% 100%;
+  --popover: 0 0% 98%;  /* Changed from 100% to 98% */
   --popover-foreground: 220 15% 10%;
-  
+
   /* Vibrant electric blue & purple gradient primary */
   --primary: 250 100% 65%;
   --primary-foreground: 0 0% 100%;
   --primary-light: 250 100% 85%;
   --primary-dark: 250 100% 50%;
   
-  --secondary: 220 20% 96%;
+  --secondary: 220 20% 94%;  /* Changed from 96% to 94% - slightly darker */
   --secondary-foreground: 220 15% 10%;
   
-  --muted: 220 20% 97%;
+  --muted: 220 20% 95%;  /* Changed from 97% to 95% */
   --muted-foreground: 220 15% 35%;
-  
+
   /* Vibrant cyan accent for tech feel */
   --accent: 185 100% 50%;
   --accent-foreground: 0 0% 100%;
@@ -40,48 +38,43 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 220 20% 88%;
-  --input: 220 20% 88%;
+  --border: 220 20% 85%;  /* Changed from 88% to 85% - more visible borders */
+  --input: 220 20% 85%;  /* Changed from 88% to 85% */
   --ring: 250 100% 65%;
-  
+
   /* Sidebar Colors */
-  --sidebar-background: 0 0% 98%;
+  --sidebar-background: 220 15% 96%;  /* Changed from 98% to 96% */
   --sidebar-foreground: 220 15% 18%;
   --sidebar-primary: 250 100% 65%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 220 20% 95%;
+  --sidebar-accent: 220 20% 92%;  /* Changed from 95% to 92% */
   --sidebar-accent-foreground: 220 15% 10%;
-  --sidebar-border: 220 15% 88%;
+  --sidebar-border: 220 15% 85%;  /* Changed from 88% to 85% */
   --sidebar-ring: 250 100% 65%;
-  
-  /* Carousel Colors - Energetic purple & pink */
-  --carousel-bg: 260 100% 99%;
+
+  /* Carousel Colors - Energetic purple & pink with softer background */
+  --carousel-bg: 260 50% 97%;  /* Changed from 100% to 50% saturation and 99% to 97% */
   --carousel-foreground: 260 15% 12%;
   --carousel-muted: 260 10% 38%;
   --carousel-highlight: 280 100% 65%;
-  
   --carousel-gradient-start: 280 100% 65%;
   --carousel-gradient-end: 320 100% 70%;
-  
   --carousel-blob-1: 280 90% 90%;
   --carousel-blob-2: 320 85% 88%;
   --carousel-blob-3: 185 85% 88%;
-  
-  --carousel-badge-bg: 280 85% 96%;
+  --carousel-badge-bg: 280 85% 94%;  /* Changed from 96% to 94% */
   --carousel-badge-foreground: 280 100% 35%;
   --carousel-accent: 280 100% 65%;
-  
-  --carousel-nav-bg: 0 0% 100%;
-  --carousel-nav-hover: 280 80% 96%;
+  --carousel-nav-bg: 0 0% 98%;  /* Changed from 100% to 98% */
+  --carousel-nav-hover: 280 80% 94%;  /* Changed from 96% to 94% */
   --carousel-nav-foreground: 280 100% 35%;
-  
   --carousel-dot: 260 10% 75%;
   --carousel-dot-hover: 280 80% 60%;
-  --carousel-progress-track: 260 10% 90%;
+  --carousel-progress-track: 260 10% 88%;  /* Changed from 90% to 88% */
 }
 
 .dark {
-  /* Dark Mode Colors */
+  /* Dark Mode Colors - UNCHANGED */
   --background: 220 20% 8%;
   --foreground: 220 20% 98%;
   
@@ -90,7 +83,7 @@
   
   --popover: 220 20% 10%;
   --popover-foreground: 220 20% 98%;
-  
+
   /* Brighter primary for dark mode visibility */
   --primary: 250 100% 70%;
   --primary-foreground: 220 20% 8%;
@@ -102,7 +95,7 @@
   
   --muted: 220 20% 12%;
   --muted-foreground: 220 15% 75%;
-  
+
   /* Vibrant cyan for dark mode */
   --accent: 185 100% 60%;
   --accent-foreground: 220 20% 8%;
@@ -113,7 +106,7 @@
   --border: 220 20% 18%;
   --input: 220 20% 18%;
   --ring: 250 100% 70%;
-  
+
   /* Sidebar Dark Colors */
   --sidebar-background: 220 20% 10%;
   --sidebar-foreground: 0 0% 100%;
@@ -123,28 +116,23 @@
   --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-border: 220 20% 20%;
   --sidebar-ring: 250 100% 70%;
-  
+
   /* Carousel Dark Mode - Neon vibes */
   --carousel-bg: 260 20% 10%;
   --carousel-foreground: 0 0% 98%;
   --carousel-muted: 260 10% 72%;
   --carousel-highlight: 280 100% 75%;
-  
   --carousel-gradient-start: 280 100% 70%;
   --carousel-gradient-end: 320 100% 75%;
-  
   --carousel-blob-1: 280 60% 20%;
   --carousel-blob-2: 320 55% 20%;
   --carousel-blob-3: 185 50% 18%;
-  
   --carousel-badge-bg: 280 50% 18%;
   --carousel-badge-foreground: 280 100% 82%;
   --carousel-accent: 280 100% 70%;
-  
   --carousel-nav-bg: 260 20% 15%;
   --carousel-nav-hover: 280 50% 20%;
   --carousel-nav-foreground: 280 100% 82%;
-  
   --carousel-dot: 260 10% 35%;
   --carousel-dot-hover: 280 70% 55%;
   --carousel-progress-track: 260 10% 18%;
@@ -158,7 +146,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
@@ -177,13 +165,13 @@
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  
+
   /* Additional gradient colors for purple and pink */
   --color-purple-400: hsl(280 100% 70%);
   --color-purple-500: hsl(280 100% 65%);
   --color-pink-400: hsl(320 100% 75%);
   --color-pink-500: hsl(320 100% 70%);
-  
+
   /* Additional gradient colors for privacy policy sections */
   --color-blue-400: hsl(210 100% 65%);
   --color-blue-500: hsl(210 100% 60%);
@@ -203,11 +191,10 @@
   --color-violet-400: hsl(260 85% 65%);
   --color-rose-500: hsl(350 90% 60%);
   --color-yellow-400: hsl(45 100% 60%);
-  
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
   --color-sidebar-background: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -216,7 +203,6 @@
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
-  
   --color-carousel: hsl(var(--carousel-bg));
   --color-carousel-foreground: hsl(var(--carousel-foreground));
   --color-carousel-muted: hsl(var(--carousel-muted));
@@ -243,11 +229,9 @@
   * {
     @apply border-border outline-ring/50;
   }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-
   html {
     scroll-behavior: smooth;
   }
@@ -258,31 +242,31 @@
   .bg-gradient-primary {
     background: linear-gradient(135deg, oklch(0.713 0.271 292.56), oklch(0.761 0.271 306.28));
   }
-  
+
   .dark .bg-gradient-primary {
     background: linear-gradient(135deg, oklch(0.755 0.271 292.56), oklch(0.797 0.271 306.28));
   }
-  
+
   .bg-gradient-secondary {
     background: linear-gradient(135deg, oklch(0.707 0.171 210.99), oklch(0.713 0.271 292.56));
   }
-  
+
   .dark .bg-gradient-secondary {
     background: linear-gradient(135deg, oklch(0.755 0.171 210.99), oklch(0.755 0.271 292.56));
   }
-  
+
   .bg-gradient-accent {
     background: linear-gradient(135deg, oklch(0.761 0.271 306.28), oklch(0.797 0.271 338.67));
   }
-  
+
   .dark .bg-gradient-accent {
     background: linear-gradient(135deg, oklch(0.797 0.271 306.28), oklch(0.839 0.271 338.67));
   }
-  
+
   .bg-gradient-bg {
-    background: linear-gradient(135deg, oklch(0.989 0.012 268.93), oklch(0.996 0.015 267.57));
+    background: linear-gradient(135deg, oklch(0.970 0.012 268.93), oklch(0.980 0.015 267.57));  /* Reduced from 0.989/0.996 to 0.970/0.980 */
   }
-  
+
   .dark .bg-gradient-bg {
     background: linear-gradient(135deg, oklch(0.211 0.018 268.93), oklch(0.247 0.018 268.93));
   }
@@ -329,7 +313,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

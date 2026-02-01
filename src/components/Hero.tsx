@@ -86,6 +86,7 @@ const Hero = () => {
                 transition-all 
                 duration-300 
                 group
+                cursor-pointer
               "
             >
               View Our Work
@@ -96,15 +97,16 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="
-                border-accent/50
-                bg-transparent
-                text-foreground
-                hover:bg-accent/10
-                hover:border-accent/70
-                hover:text-accent
-                hover:scale-105
-                transition-all 
-                duration-300
+                border-primary/30
+                  bg-transparent
+                  text-foreground
+                  hover:bg-primary/10
+                  hover:border-primary/50
+                  hover:text-primary
+                  transition-all 
+                  duration-300
+                  group 
+                  cursor-pointer
               "
             >
               Start a Project

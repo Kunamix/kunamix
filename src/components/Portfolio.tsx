@@ -253,14 +253,14 @@ const Portfolio = () => {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="bg-gradient-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-semibold px-8 h-12 rounded-lg text-base"
+                className="bg-gradient-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-semibold px-8 h-12 rounded-lg text-base cursor-pointer"
               >
                 Start Your Project
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 font-semibold px-8 h-12 rounded-lg text-base backdrop-blur-sm bg-transparent"
+                className="border border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 font-semibold px-8 h-12 rounded-lg text-base backdrop-blur-sm bg-transparent cursor-pointer hover:text-primary"
                 onClick={() => {
                   const element = document.querySelector("#contact");
                   if (element) {

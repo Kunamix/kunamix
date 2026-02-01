@@ -374,7 +374,7 @@ const HeroCarousel = () => {
           {/* Arrow Buttons */}
           <button
             onClick={prevSlide}
-            className="p-2 sm:p-3 rounded-full bg-carousel-nav hover:bg-carousel-nav-hover text-carousel-nav-foreground transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-carousel-accent shadow-md sm:shadow-lg"
+            className="p-2 sm:p-3 rounded-full bg-carousel-nav hover:bg-carousel-nav-hover text-carousel-nav-foreground transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-carousel-accent shadow-md sm:shadow-lg cursor-pointer"
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -400,7 +400,7 @@ const HeroCarousel = () => {
           {/* Arrow Buttons */}
           <button
             onClick={nextSlide}
-            className="p-2 sm:p-3 rounded-full bg-carousel-nav hover:bg-carousel-nav-hover text-carousel-nav-foreground transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-carousel-accent shadow-md sm:shadow-lg"
+            className="p-2 sm:p-3 rounded-full bg-carousel-nav hover:bg-carousel-nav-hover text-carousel-nav-foreground transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-carousel-accent shadow-md sm:shadow-lg cursor-pointer"
             aria-label="Next slide"
           >
             <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />

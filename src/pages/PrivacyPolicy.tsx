@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
           animate={{ scale: 1 }}
           transition={{ delay: 0.2 }}
           onClick={onClose}
-          className="fixed top-6 right-6 z-50 p-2 rounded-full bg-card hover:bg-muted border border-border shadow-lg transition-all duration-300 hover:scale-110 group"
+          className="fixed top-6 right-6 z-50 p-2 rounded-full bg-card hover:bg-muted border border-border shadow-lg transition-all duration-300 hover:scale-110 group cursor-pointer"
         >
           <X className="w-6 h-6 text-foreground group-hover:rotate-90 transition-transform duration-300" />
         </motion.button>

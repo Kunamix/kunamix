@@ -15,7 +15,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-// import { useToast } from "@/hooks/use-toast";
 import contactData from "@/constants/contact.json";
 import discord from "../assets/icons/discord.png";
 import { useContactForm } from "@/hooks/useContactFrom";
@@ -24,7 +23,6 @@ import { toast } from "sonner";
 const Contact = () => {
   const { sendContactForm, loading } = useContactForm();
   const { contactInfo, social } = contactData;
-  // const { toast } = useToast();
   const [isSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -261,7 +259,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-primary hover:shadow-primary transition-all duration-300 disabled:opacity-50"
+                    className="w-full bg-gradient-primary hover:shadow-primary transition-all duration-300 disabled:opacity-50 cursor-pointer"
                   >
                     {loading ? (
                       <motion.div

@@ -321,7 +321,7 @@ const About = () => {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="bg-white text-primary hover:bg-white/90 transition-all duration-300 font-bold shadow-2xl hover:shadow-xl hover:scale-110 px-10 h-14 text-base"
+                  className="bg-white text-primary hover:bg-white/90 transition-all duration-300 font-bold shadow-2xl hover:shadow-xl hover:scale-110 px-10 h-14 text-base cursor-pointer"
                 >
                   Schedule a Consultation
                 </Button>

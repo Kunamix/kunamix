@@ -176,6 +176,7 @@ const Services = () => {
                       transition-all 
                       duration-300 
                       group/btn
+                      cursor-pointer
                     "
                     onClick={() => {
                       const element = document.querySelector("#contact");
@@ -223,6 +224,7 @@ const Services = () => {
                 hover:scale-105
                 transition-all 
                 duration-300
+                cursor-pointer
               "
             >
               Discuss Your Project

@@ -80,7 +80,7 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors relative group"
+                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors relative group cursor-pointer"
                 >
                   {item.name}
                   <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
