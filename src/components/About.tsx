@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "motion/react";
 import { Code2, Palette, Zap, Users, Award, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,20 +7,20 @@ const About = () => {
   const teamStats = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "3-Person Team",
-      description: "Dedicated developers and designers working in sync",
+      title: "Agile Development Team",
+      description: "Expert developers and designers delivering enterprise-grade solutions",
       color: "from-blue-500 to-purple-600",
     },
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Full-Stack Expertise",
-      description: "From frontend to backend, we've got you covered",
+      description: "Complete tech stack mastery from frontend to backend infrastructure",
       color: "from-purple-500 to-pink-600",
     },
     {
       icon: <Palette className="w-8 h-8" />,
-      title: "Design-First Approach",
-      description: "Beautiful interfaces that users love to interact with",
+      title: "Design Excellence",
+      description: "Award-worthy interfaces that drive engagement and conversions",
       color: "from-cyan-500 to-blue-600",
     },
   ];
@@ -30,21 +28,21 @@ const About = () => {
   const coreValues = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Client-Focused",
+      title: "Results-Driven",
       description:
-        "Your success is our priority. We listen, understand, and deliver solutions tailored to your goals.",
+        "We deliver measurable outcomes that exceed expectations. Your ROI is our benchmark for success.",
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Fast & Efficient",
+      title: "Rapid Deployment",
       description:
-        "We value your time. Quick turnarounds without compromising on quality.",
+        "Efficient project execution with agile methodology ensures faster time-to-market without sacrificing quality.",
     },
     {
       icon: <Award className="w-6 h-6" />,
-      title: "Quality Driven",
+      title: "Enterprise Quality",
       description:
-        "Every pixel, every line of code is crafted with attention to detail and best practices.",
+        "Production-ready code following industry best practices, scalable architecture, and rigorous testing protocols.",
     },
   ];
 
@@ -125,13 +123,13 @@ const About = () => {
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-foreground/85 mb-6 font-medium">
-            A passionate team of developers and designers crafting exceptional
-            digital experiences
+            Elite development team specializing in cutting-edge web solutions
           </p>
           <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto">
-            We're a small but mighty team that believes great digital products
-            come from the perfect blend of creativity, technical expertise, and
-            genuine care for our clients' success.
+            We are a specialized development studio combining technical excellence 
+            with strategic design thinking. Our lean, focused approach allows us to 
+            deliver high-impact solutions with the precision and quality that larger 
+            agencies struggle to match.
           </p>
         </motion.div>
 
@@ -193,12 +191,11 @@ const About = () => {
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                What Drives Us
+                Our Competitive Edge
               </span>
             </h3>
             <p className="text-foreground/60 mt-4 text-lg max-w-2xl mx-auto">
-              Our core values shape everything we do and how we work with our
-              clients
+              The principles that set us apart in delivering exceptional digital solutions
             </p>
           </div>
 
@@ -248,11 +245,11 @@ const About = () => {
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Our Expertise
+                Technical Capabilities
               </span>
             </h3>
             <p className="text-foreground/60 mt-4 text-lg">
-              A comprehensive skill set to deliver excellence
+              Modern tech stack and industry-leading methodologies
             </p>
           </div>
 
@@ -296,7 +293,7 @@ const About = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl md:text-4xl font-bold mb-6"
               >
-                Ready to work with us?
+                Let's Build Something Exceptional
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -305,9 +302,9 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-white/95 mb-10 text-lg max-w-3xl mx-auto leading-relaxed"
               >
-                Let's discuss your project and see how we can bring your vision
-                to life. We're excited to hear about your ideas and collaborate
-                on something amazing!
+                Ready to transform your vision into a powerful digital solution? 
+                Schedule a consultation to discuss your project requirements and 
+                discover how we can deliver results that drive your business forward.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -326,7 +323,7 @@ const About = () => {
                   }}
                   className="bg-white text-primary hover:bg-white/90 transition-all duration-300 font-bold shadow-2xl hover:shadow-xl hover:scale-110 px-10 h-14 text-base"
                 >
-                  Start a Conversation
+                  Schedule a Consultation
                 </Button>
               </motion.div>
             </div>

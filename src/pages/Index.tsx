@@ -9,14 +9,13 @@ import Testimonials from "@/components/Testimonial";
 import Portfolio from "@/components/Portfolio";
 import About from "@/components/About";
 
-
 const Index = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-background"
+      className="min-h-screen max-w-screen bg-background"
     >
       <Header />
       <main>
