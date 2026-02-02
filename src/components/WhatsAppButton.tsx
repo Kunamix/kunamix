@@ -1,4 +1,4 @@
-import whatsappImage from "@/assets/icons/whatsapp.png"
+import whatsappImage from "@/assets/icons/whatsapp.webp"
 
 const WhatsAppButton = () => {
   const phoneNumber = "8788523391"; 

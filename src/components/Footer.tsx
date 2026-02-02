@@ -1,19 +1,28 @@
 import { motion } from "motion/react";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  Instagram,
-} from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import contactData from "@/constants/contact.json";
-import Logo from "/logo.png";
-import discord from "../assets/icons/discord.png";
+import Logo from "/logo.webp";
+import discordBlue from "../assets/icons/discord-blue.webp";
+import discordImg from "../assets/icons/discord.webp";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const { contactInfo, social } = contactData;
   const navigate = useNavigate();
+
+  const DiscordIcon = () => {
+    const [hover, setHover] = useState(false);
+    return (
+      <img
+        src={hover ? discordImg : discordBlue}
+        alt="Discord"
+        className="w-5 h-5"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      />
+    );
+  };
 
   const getSocialIcon = (platform: string) => {
     switch (platform) {
@@ -26,7 +35,7 @@ const Footer = () => {
       case "instagram":
         return <Instagram className="w-5 h-5" />;
       case "discord":
-        return <img src={discord} className="w-5 h-5" />;
+        return <DiscordIcon />;
       default:
         return <Mail className="w-5 h-5" />;
     }

@@ -1,6 +1,6 @@
-import erpPage from "@/assets/portfolio/1.png";
-import empPage from "@/assets/portfolio/2.png";
-import quizApp from "@/assets/portfolio/3.png"
+import erpPage from "@/assets/portfolio/1.webp";
+import empPage from "@/assets/portfolio/2.webp";
+import quizApp from "@/assets/portfolio/3.webp"
 
 export const portfolioData = {
   portfolioIntro: {

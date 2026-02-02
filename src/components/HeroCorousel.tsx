@@ -2,10 +2,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
 
-import carouselDecor2 from "@/assets/carousel/carousel-decor-2.png";
-import carouselDecor1 from "@/assets/carousel/carousel-decor-1.png";
-import carouselDecor3 from "@/assets/carousel/carousel-decor-3.png";
-import carouselDecor4 from "@/assets/carousel/carousel-decor-4.png";
+import carouselDecor2 from "@/assets/carousel/carousel-decor-2.webp";
+import carouselDecor1 from "@/assets/carousel/carousel-decor-1.webp";
+import carouselDecor3 from "@/assets/carousel/carousel-decor-3.webp";
+import carouselDecor4 from "@/assets/carousel/carousel-decor-4.webp";
 import {
   ArrowRight,
   ChevronLeft,

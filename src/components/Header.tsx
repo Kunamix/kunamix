@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { Menu, X, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
-import Logo from "/logo.png";
+import Logo from "/logo.webp";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {

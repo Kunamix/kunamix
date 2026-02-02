@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import contactData from "@/constants/contact.json";
-import discord from "../assets/icons/discord.png";
+import discord from "../assets/icons/discord.webp";
 import { useContactForm } from "@/hooks/useContactFrom";
 import { toast } from "sonner";
 
