@@ -28,11 +28,16 @@ const Header = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
     setIsMobileMenuOpen(false);
+    // Use a small delay to ensure menu closes first
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const yOffset = -80; // Account for fixed header
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({top: y, behavior: "smooth"});
+      }
+    }, 50);
   };
 
   const onReferClick = () => {
@@ -150,8 +155,11 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground"
+              onClick={() => {
+                 
+                 setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
+              className="text-foreground "
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -176,7 +184,10 @@ const Header = () => {
             {navigation.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => {
+                  
+                  scrollToSection(item.href);
+                }}
                 className="text-foreground hover:text-primary hover:bg-muted block px-3 py-2 text-base font-medium w-full text-left transition-colors"
               >
                 {item.name}
